@@ -20,6 +20,14 @@ class HashMap<K extends string, V> {
 		hash.update(key);
 		return hash.digest('hex');
   }
+
+	log(){
+		const entries = Object.entries(this.hashMap);
+
+		for (const iterator of entries) {
+			console.log(iterator);
+		}
+	}
 }
 
 const hashMap = new HashMap<string, number>();
@@ -27,8 +35,5 @@ const hashMap = new HashMap<string, number>();
 hashMap.set('Max', 1);
 hashMap.set('Vlad', 2);
 hashMap.set('Artem', 3);
-hashMap.set('Artem', 4);
-hashMap.set('Artem', 5);
-hashMap.set('Artem', 6);
 
-console.log(hashMap);
+hashMap.log();
